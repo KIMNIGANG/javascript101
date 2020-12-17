@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClientX PageX</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+    }
+    .box {
+      background-color: thistle;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .special {
+      background-color: tomato;
+    }
+    .screen {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="screen">Size</div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box special"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+      const specialBox = document.querySelector(".special");
+      specialBox.addEventListener("click", (event) => {
+        const rect = specialBox.getBoundingClientRect();
+        console.log(rect);
+        console.log(`client: ${event.clientX} , ${event.clientY}`);
+        console.log(`page: ${event.pageX} , ${event.pageY}`);
+      });
+    </script>
+  </body>
+</html>

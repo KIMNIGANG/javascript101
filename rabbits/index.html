@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        margin: 30px;
+        padding: 30px;
+        background-color: bisque;
+        outline: none;
+        font-size: 20px;
+      }
+      img {
+        cursor: pointer;
+      }
+      .rabbit {
+      }
+
+      .active {
+        -webkit-animation: rotation 1s;
+      }
+
+      @-webkit-keyframes rotation {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(359deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Find Rabbit</button>
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/rabbit.png" alt="" class="rabbit" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <img src="img/carrot.png" alt="" class="carrot" />
+    <script>
+      const btn = document.querySelector(".btn");
+      const rabbit = document.querySelector(".rabbit");
+
+      btn.addEventListener("click", () => {
+        rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+      rabbit.addEventListener("click", () => {
+        rabbit.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

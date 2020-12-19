@@ -37,6 +37,7 @@ function create(text, list) {
   container.appendChild(items_divider);
 
   list.appendChild(container);
+  item.scrollIntoView({ block: "center" });
 }
 
 addBtn.addEventListener("click", () => {
@@ -46,6 +47,7 @@ addBtn.addEventListener("click", () => {
   }
   create(text, itemList);
   input.value = "";
+  input.focus();
 });
 
 input.addEventListener("keyup", (event) => {
@@ -57,4 +59,9 @@ input.addEventListener("keyup", (event) => {
     create(text, itemList);
     input.value = "";
   }
+  input.focus();
+});
+
+input.addEventListener("keypress", (event) => {
+  console.log(event);
 });

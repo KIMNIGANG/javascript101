@@ -20,9 +20,9 @@ function create(text, list) {
 
   const item_delete = document.createElement("button");
   item_delete.setAttribute("class", "item_delete");
-  item_delete.addEventListener("click", () => {
-    itemList.removeChild(container);
-  });
+  // item_delete.addEventListener("click", () => {
+  //   itemList.removeChild(container);
+  // });
 
   const icon = document.createElement("i");
   icon.setAttribute("class", "far fa-trash-alt");
@@ -62,6 +62,6 @@ input.addEventListener("keyup", (event) => {
   input.focus();
 });
 
-input.addEventListener("keypress", (event) => {
-  console.log(event);
+itemList.addEventListener("click", (event) => {
+  event.target.removeChild(event.parentNode);
 });
